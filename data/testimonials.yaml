@@ -1,0 +1,53 @@
+testimonials:
+  - avatar: /images/admin/avatar1.png
+    name: Rahmat
+    message: >-
+      Layanan optimasi website dari Gosite.or.id sangat efektif. Peringkat
+      website saya meningkat signifikan.
+    response: >-
+      Kami sangat menghargai ulasan Anda. Terima kasih telah mempercayakan
+      kebutuhan digital marketing Anda kepada kami!
+    rating: 5
+  - avatar: /images/admin/avatar2.png
+    name: Ari
+    message: Saya puas dengan jasa iklan Google Ads dari Gosite.or.id yang terarah.
+    response: >-
+      Kami sangat menghargai ulasan Anda. Senang mendengar bahwa Anda puas
+      dengan layanan kami!
+    rating: 5
+  - avatar: /images/admin/avatar3.png
+    name: Rahmat
+    message: >-
+      Jasa pengelolaan artikel dari Gosite.or.id sangat bermanfaat. Website saya
+      kini lebih SEO-friendly dan trafiknya meningkat.
+    response: >-
+      Senang dapat membantu meningkatkan visibilitas website Anda. Terima kasih
+      atas kepercayaannya!
+    rating: 4
+  - avatar: /images/admin/avatar4.png
+    name: Ilham
+    message: >-
+      Saya sangat puas dengan jasa pembuatan website di Gosite.or.id. Prosesnya
+      lancar dan hasilnya sangat membantu pertumbuhan bisnis saya.
+    response: >-
+      Terima kasih atas ulasannya. Kami sangat menghargai kepercayaan Anda pada
+      layanan kami.
+    rating: 5
+  - avatar: /images/admin/avatar5.png
+    name: Aulia
+    message: >-
+      Layanan Gosite.or.id sangat efektif untuk pemasaran bisnis online. Iklan
+      yang dibuat sangat berdampak dan menghasilkan konversi tinggi.
+    response: >-
+      Kami menghargai ulasan Anda. Terima kasih telah memilih Gosite.or.id untuk
+      kebutuhan pemasaran digital Anda!
+    rating: 5
+  - avatar: /images/admin/avatar6.png
+    name: Farhan
+    message: >-
+      Saya menggunakan jasa Gosite.or.id untuk iklan online, dan hasilnya luar
+      biasa. Layanannya profesional.
+    response: >-
+      Kami senang mendengar bahwa Anda puas dengan layanan kami. Terima kasih
+      atas ulasannya!
+    rating: 5

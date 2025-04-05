@@ -1,0 +1,25 @@
+{{ define "main" }}
+<header>
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+  </div>
+</header>
+<section class="portofolio">
+   <div class="container">
+      <h2>Proyek Terbaru</h2>
+      <p class="section-description">{{ .Site.Params.portfolio_description }}</p>
+      <div class="portofolio-grid">
+         {{ range .Site.Params.portfolio }}
+         <div class="portofolio-card">
+            <img src="{{ .image }}" alt="{{ .title }}" class="portofolio-img">
+            <div class="portofolio-info">
+               <h3>{{ .title }}</h3>
+               <p>{{ .description }}</p>
+               <a href="{{ .link }}" class="cta-button">Lihat Detail</a>
+            </div>
+         </div>
+         {{ end }}
+      </div>
+   </div>
+</section>
+{{ end }}

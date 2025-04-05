@@ -1,0 +1,14 @@
+{{ define "main" }}
+<header>
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+  </div>
+</header>
+
+{{ with resources.Get "web.html" }}
+  {{ .Content | safeHTML }}
+{{ else }}
+  <p>File jasa web tidak ditemukan.</p>
+{{ end }}
+
+{{ end }}

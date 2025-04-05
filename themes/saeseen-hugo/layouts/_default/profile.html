@@ -1,0 +1,76 @@
+{{ define "main" }}
+<header>
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+  </div>
+</header>
+<section class="profile">
+   <div class="container">
+      <h2>{{ .Site.Params.profile_title }}</h2>
+      <p>{{ .Site.Params.profile_description }}</p>
+
+      <div class="profile-content">
+         <div class="profile-details">
+            <h3>{{ .Site.Params.business_name }}</h3>
+            <p>{{ .Site.Params.business_description }}</p>
+            <ul class="service-list">
+               {{ range .Site.Params.services }}
+               <li><i class="fas fa-check-circle"></i> {{ . }}</li>
+               {{ end }}
+            </ul>
+            <div class="button-container">
+               <a href="/kontak/" class="cta-button">Hubungi Kami</a>
+            </div>
+         </div>
+      </div>
+      <div class="profile-content">
+         <div class="profile-details">
+            <div class="profile-image">
+               <img src="{{ .Site.Params.owner_image }}" alt="Profil Jasa" class="profile-img">
+               <div class="profile-info">
+                  <p class="profile-name">{{ .Site.Params.owner_name }}</p>
+                  <p class="profile-status">{{ .Site.Params.owner_role }}</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="education">
+         <h3>Pendidikan</h3>
+         <div class="education-list">
+            {{ range .Site.Params.education }}
+            <div class="education-item">
+               <i class="fas fa-book"></i>
+               <h4>{{ .degree }}</h4>
+               <p>{{ .description }}</p>
+            </div>
+            {{ end }}
+         </div>
+      </div>
+      <div class="experience">
+         <h3>Pengalaman</h3>
+         <div class="experience-list">
+            {{ range .Site.Params.experience }}
+            <div class="experience-item">
+               <i class="{{ .icon }}"></i>
+               <h4>{{ .title }}</h4>
+               <p>{{ .description }}</p>
+            </div>
+            {{ end }}
+         </div>
+      </div>
+      <div class="skills">
+         <h3>Keahlian</h3>
+         <div class="skills-container">
+            {{ range .Site.Params.skills }}
+            <div class="skill-item">
+               <i class="{{ .icon }}"></i>
+               <h4>{{ .title }}</h4>
+               <p>{{ .description }}</p>
+            </div>
+            {{ end }}
+         </div>
+      </div>
+
+   </div>
+</section>
+{{ end }}

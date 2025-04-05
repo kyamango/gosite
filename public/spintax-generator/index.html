@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="gosite.or.id - Tool Spintax Article Generator Free.">
+    <link rel="icon" type="image/png" href="/images/logo/logo-gosite-favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Advanced Spintax Article Generator</title>
+    <style>
+        :root {
+            --primary-color: #1b1f3a;
+            --secondary-color: #ffd900;
+            --accent-color: #161a34;
+            --text-color: #333333;
+            --bg-color: #F5F5F5;
+            --white: #FFFFFF;
+            --light-gray: #E0E0E0;
+            --success-color: #2E8B57;
+            --warning-color: #ffaa00;
+            --error-color: #DC3545;
+            --whatsapp: #e5ddd5;
+            --chatheader: #075e54;
+            --green: #e6ffda;
+            --text-blur: #a7a1a1;
+            }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+
+        textarea, input[type="text"], input[type="number"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid var(--light-gray);
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        #result, #seo-data {
+            background-color: var(--white);
+            border: 1px solid var(--light-gray);
+            border-radius: 4px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            background-color: var(--bg-color);
+            border: 1px solid var(--light-gray);
+            border-bottom: none;
+            cursor: pointer;
+        }
+
+        .tab.active {
+            background-color: var(--white);
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border: 1px solid var(--text-blur);
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Advanced Spintax Article Generator</h1>
+
+        <div class="tabs">
+            <div class="tab active" onclick="showTab('input-tab')">Input</div>
+            <div class="tab" onclick="showTab('result-tab')">Result</div>
+            <div class="tab" onclick="showTab('seo-tab')">SEO Data</div>
+        </div>
+
+        <div id="input-tab" class="tab-content active">
+            <textarea id="input" rows="10" placeholder="Enter your spintax article here..."></textarea>
+            <input type="text" id="article-title" placeholder="Enter article title">
+            <div>
+                <button onclick="generateArticle()">Generate Article</button>
+                <button onclick="fixSpintax()">Fix Spintax Errors</button>
+                <button onclick="convertToSpintax()">Convert to Spintax</button>
+                <button onclick="generateSEO()">Generate SEO Data</button>
+                <button onclick="generateSitemap()">Generate Sitemap</button>
+                <button onclick="generateRelatedPosts()">Generate Related Posts</button>
+            </div>
+            <div>
+                <label for="format">Export Format:</label>
+                <select id="format">
+                    <option value="wordpress">WordPress</option>
+                    <option value="blogspot">Blogspot</option>
+                    <option value="hugo">Hugo</option>
+                    <option value="csv">CSV</option>
+                </select>
+                <button onclick="exportArticle()">Export</button>
+            </div>
+            <div>
+                <label for="limit">Generation Limit:</label>
+                <input type="number" id="limit" min="1" value="1">
+            </div>
+            <div>
+                <label for="view-mode">View Mode:</label>
+                <select id="view-mode" onchange="changeViewMode()">
+                    <option value="visual">Visual</option>
+                    <option value="html">HTML</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="result-tab" class="tab-content">
+            <div id="result"></div>
+        </div>
+
+        <div id="seo-tab" class="tab-content">
+            <div id="seo-data"></div>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabId) {
+            const tabs = document.querySelectorAll('.tab');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabs.forEach(tab => tab.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+            
+            document.querySelector(`[onclick="showTab('${tabId}')"]`).classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        async function saveArticle() {
+    const title = document.getElementById('article-title').value;
+    const content = document.getElementById('result').innerHTML;
+    
+    const response = await fetch('/api/articles', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ title, content }),
+    });
+    
+    const savedArticle = await response.json();
+    console.log('Article saved:', savedArticle);
+    }
+
+    async function loadArticles() {
+    const response = await fetch('/api/articles');
+    const articles = await response.json();
+    
+    const articleList = document.getElementById('article-list');
+    articleList.innerHTML = articles.map(article => `
+        <div>
+            <h3>${article.title}</h3>
+            <p>${article.content.substring(0, 100)}...</p>
+        </div>
+    `).join('');
+        }
+
+        function generateArticle() {
+            const input = document.getElementById('input').value;
+            const limit = parseInt(document.getElementById('limit').value);
+            let result = '';
+
+            for (let i = 0; i < limit; i++) {
+                result += processSpintax(input) + '\n\n';
+            }
+
+            document.getElementById('result').innerHTML = result;
+            updateWordCount(result);
+        }
+
+        function processSpintax(text) {
+            return text.replace(/\{([^{}]+)\}/g, function(match, contents) {
+                const options = contents.split('|');
+                return options[Math.floor(Math.random() * options.length)];
+            });
+        }
+
+        function updateWordCount(text) {
+            const wordCount = text.trim().split(/\s+/).length;
+            document.getElementById('result').innerHTML += `<p>Word count: ${wordCount}</p>`;
+        }
+
+        function fixSpintax() {
+            let input = document.getElementById('input').value;
+            
+            input = input.replace(/\{\s+/g, '{').replace(/\s+\}/g, '}');
+            input = input.replace(/\s*\|\s*/g, '|');
+            
+            let openBrackets = 0;
+            let fixedInput = '';
+            for (let char of input) {
+                if (char === '{') {
+                    openBrackets++;
+                } else if (char === '}') {
+                    if (openBrackets > 0) {
+                        openBrackets--;
+                    } else {
+                        continue;
+                    }
+                }
+                fixedInput += char;
+            }
+            
+            fixedInput += '}'.repeat(openBrackets);
+            fixedInput = fixedInput.replace(/\{\|+\}/g, '');
+            fixedInput = fixedInput.replace(/\{([^{}|]+)(?:\|(?:\1))+\}/g, '{$1}');
+            
+            document.getElementById('input').value = fixedInput;
+        }
+
+        function convertToSpintax() {
+            const input = document.getElementById('input').value;
+            const paragraphs = input.split('\n\n');
+            const spintaxParagraphs = paragraphs.map(paragraph => {
+                const sentences = paragraph.split('. ');
+                const spintaxSentences = sentences.map(sentence => {
+                    const words = sentence.split(' ');
+                    const spintaxWords = words.map(word => `{${word}}`);
+                    return `{${spintaxWords.join(' ')}}`;
+                });
+                return `{${spintaxSentences.join('. ')}}`;
+            });
+            document.getElementById('input').value = spintaxParagraphs.join('\n\n');
+        }
+
+        function generateSEO() {
+            const content = document.getElementById('result').innerHTML;
+            const words = content.toLowerCase().match(/\b(\w+)\b/g);
+            const wordFreq = {};
+            words.forEach(word => {
+                wordFreq[word] = (wordFreq[word] || 0) + 1;
+            });
+
+            const sortedWords = Object.entries(wordFreq)
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 10);
+
+            const title = generateTitle(sortedWords);
+            const description = generateDescription(content);
+            const keywords = sortedWords.map(([word]) => word).join(', ');
+
+            const seoData = `
+                <h3>SEO Data</h3>
+                <p><strong>Title:</strong> ${title}</p>
+                <p><strong>Description:</strong> ${description}</p>
+                <p><strong>Keywords:</strong> ${keywords}</p>
+                <p><strong>Top 10 words:</strong></p>
+                <ul>
+                    ${sortedWords.map(([word, freq]) => `<li>${word}: ${freq}</li>`).join('')}
+                </ul>
+                <p><strong>Word Count:</strong> ${words.length}</p>
+                <p><strong>Readability:</strong> ${calculateReadability(content)}</p>
+            `;
+
+            document.getElementById('seo-data').innerHTML = seoData;
+        }
+
+        function generateTitle(topWords) {
+            return `${topWords[0][0].charAt(0).toUpperCase() + topWords[0][0].slice(1)}: ${topWords[1][0]} and ${topWords[2][0]}`;
+        }
+
+        function generateDescription(content) {
+            return content.split('.')[0].substring(0, 160) + '...';
+        }
+
+        function calculateReadability(text) {
+            const words = text.match(/\b(\w+)\b/g).length;
+            const sentences = text.split('.').length;
+            const syllables = text.toLowerCase().split(/\b\w+\b/).reduce((count, word) => {
+                return count + (word.match(/[aeiou]/g) || []).length;
+            }, 0);
+            
+            const fleschKincaid = 206.835 - 1.015 * (words / sentences) - 84.6 * (syllables / words);
+            
+            if (fleschKincaid > 90) return "Very Easy";
+            if (fleschKincaid > 80) return "Easy";
+            if (fleschKincaid > 70) return "Fairly Easy";
+            if (fleschKincaid > 60) return "Standard";
+            if (fleschKincaid > 50) return "Fairly Difficult";
+            if (fleschKincaid > 30) return "Difficult";
+            return "Very Difficult";
+        }
+
+        function generateSitemap() {
+            const urls = [
+                'https://example.com/',
+                'https://example.com/about',
+                'https://example.com/contact'
+            ];
+            
+            let sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n';
+            sitemap += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
+            
+            urls.forEach(url => {
+                sitemap += '  <url>\n';
+                sitemap += `    <loc>${url}</loc>\n`;
+                sitemap += `    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>\n`;
+                sitemap += '  </url>\n';
+            });
+            
+            sitemap += '</urlset>';
+            
+            const blob = new Blob([sitemap], {type: 'text/xml'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'sitemap.xml';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        function generateRelatedPosts() {
+            const titles = [
+                "10 Tips for Better Sleep",
+                "How to Improve Your Diet",
+                "The Benefits of Regular Exercise",
+                "Stress Management Techniques",
+                "Boost Your Productivity at Work"
+            ];
+            
+            const relatedPosts = titles.sort(() => 0.5 - Math.random()).slice(0, 3);
+            
+            const relatedPostsHTML = `
+                <h3>Related Posts</h3>
+                <ul>
+                    ${relatedPosts.map(title => `<li>${title}</li>`).join('')}
+                </ul>
+            `;
+            
+            document.getElementById('result').innerHTML += relatedPostsHTML;
+        }
+
+        function exportArticle() {
+            const format = document.getElementById('format').value;
+            const content = document.getElementById('result').innerHTML;
+            const title = document.getElementById('article-title').value;
+            
+            let exportedContent = '';
+            switch(format) {
+                case 'wordpress':
+                    exportedContent = `<!-- wp:heading -->\n<h2>${title}</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>${content}</p>\n<!-- /wp:paragraph -->`;
+                    break;
+                case 'blogspot':
+                    exportedContent = `<h2>${title}</h2>\n<div class="post-body">${content}</div>`;
+                    break;
+                case 'hugo':
+                    exportedContent = `+++\ntitle = "${title}"\ndate = "${new Date().toISOString()}"\n+++\n\n${content}`;
+                    break;
+                case 'csv':
+                    exportedContent = `"title","content"\n"${title}","${content.replace(/"/g, '""')}"`;
+                    break;
+            }
+            
+            const blob = new Blob([exportedContent], {type: 'text/plain'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `article.${format === 'csv' ? 'csv' : 'txt'}`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        function changeViewMode() {
+            const mode = document.getElementById('view-mode').value;
+            const result = document.getElementById('result');
+            
+            if (mode === 'html') {
+                result.textContent = result.innerHTML;
+            } else {
+                result.innerHTML = result.textContent;
+            }
+        }
+
+        function sanitizeInput(input) {
+            const div = document.createElement('div');
+            div.textContent = input;
+            return div.innerHTML;
+        }
+
+        function validateInput() {
+            const input = document.getElementById('input').value;
+            if (input.length < 10) {
+                alert('Input too short. Please enter at least 10 characters.');
+                return false;
+            }
+            if (input.length > 10000) {
+                alert('Input too long. Please enter no more than 10000 characters.');
+                return false;
+            }
+            return true;
+        }
+
+        // Use this function before processing input
+        function processInput() {
+            if (!validateInput()) return;
+            const input = sanitizeInput(document.getElementById('input').value);
+            // Continue with processing...
+            generateArticle();
+        }
+    </script>
+</body>
+</html>
