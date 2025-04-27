@@ -1,22 +1,22 @@
 testimonials:
   - avatar: /images/admin/avatar1.png
-    name: Rian
+    name: Ilham
     message: >-
       Saya menggunakan jasa pembuatan website di Gosite.or.id untuk bisnis jasa.
-      Prosesnya mudah dan hasilnya sesuai harapan.
+      Prosesnya mudah dan hasilnya terbaik.
     response: >-
       Terima kasih atas kepercayaan Anda! Kami senang bisa membantu bisnis Anda
       berkembang.
     rating: 5
   - avatar: /images/admin/avatar2.png
-    name: Ari
-    message: Saya puas dengan jasa iklan Google Ads dari Gosite.or.id yang terarah.
+    name: Fina
+    message: Saya puas dengan jasa iklan Google Ads dari Gosite.or.id yang efektif.
     response: >-
       Terima kasih atas kepercayaannya. Kami akan terus memberikan pelayanan
       terbaik!
     rating: 5
   - avatar: /images/admin/avatar3.png
-    name: Agus
+    name: Ilham
     message: >-
       Jasa pengelolaan artikel dari Gosite.or.id sangat bermanfaat. Website saya
       kini lebih SEO-friendly dan trafiknya meningkat.
@@ -25,22 +25,22 @@ testimonials:
       bisnis Anda.
     rating: 4
   - avatar: /images/admin/avatar4.png
-    name: Rahmat
+    name: Dani
     message: >-
       Saya sangat puas dengan jasa pembuatan website di Gosite.or.id. Prosesnya
-      lancar dan hasilnya mempercepat pertumbuhan bisnis saya.
+      efisien dan hasilnya sangat membantu pertumbuhan bisnis saya.
     response: >-
       Terima kasih atas ulasannya. Kami sangat menghargai kepercayaan Anda pada
       layanan kami.
     rating: 5
   - avatar: /images/admin/avatar5.png
-    name: Lina
+    name: Fina
     message: >-
-      Gosite.or.id memberikan solusi tepat untuk promosi online saya. Timnya
-      berpengalaman dan hasilnya memuaskan.
+      Layanan Gosite.or.id sangat efektif untuk pemasaran bisnis online. Iklan
+      yang dibuat sangat berdampak dan menghasilkan konversi tinggi.
     response: >-
-      Terima kasih! Kami senang dapat membantu bisnis Anda berkembang dengan
-      strategi digital terbaik.
+      Kami menghargai ulasan Anda. Terima kasih telah memilih Gosite.or.id untuk
+      kebutuhan pemasaran digital Anda!
     rating: 5
   - avatar: /images/admin/avatar6.png
     name: Dani
