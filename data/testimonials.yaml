@@ -1,6 +1,6 @@
 testimonials:
   - avatar: /images/admin/avatar1.png
-    name: Reza
+    name: Agus
     message: >-
       Layanan optimasi website dari Gosite.or.id sangat membantu. Peringkat
       website saya meningkat signifikan.
@@ -9,23 +9,25 @@ testimonials:
       berkembang.
     rating: 5
   - avatar: /images/admin/avatar2.png
-    name: Dina
-    message: Saya puas dengan jasa iklan Google Ads dari Gosite.or.id yang efektif.
+    name: Reni
+    message: >-
+      Gosite.or.id sangat efektif dalam pemasaran online bisnis saya. Layanan
+      mereka terpercaya, dan hasilnya sesuai dengan target.
     response: >-
-      Terima kasih atas kepercayaannya. Kami akan terus memberikan pelayanan
-      terbaik!
+      Kami sangat menghargai ulasan Anda. Senang mendengar bahwa Anda puas
+      dengan layanan kami!
     rating: 5
   - avatar: /images/admin/avatar3.png
-    name: Agus
+    name: Farhan
     message: >-
-      Saya menggunakan jasa pembuatan landing page di Gosite.or.id, dan hasilnya
-      sangat membantu.
+      Jasa pengelolaan artikel dari Gosite.or.id sangat profesional. Website
+      saya kini lebih SEO-friendly dan trafiknya meningkat.
     response: >-
       Senang dapat membantu meningkatkan visibilitas website Anda. Terima kasih
       atas kepercayaannya!
     rating: 4
   - avatar: /images/admin/avatar4.png
-    name: Toni
+    name: Rahmat
     message: >-
       Saya sangat puas dengan jasa pembuatan website di Gosite.or.id. Prosesnya
       mudah dan hasilnya sangat membantu pertumbuhan bisnis saya.
@@ -34,19 +36,19 @@ testimonials:
       kepercayaannya dalam menggunakan layanan kami.
     rating: 5
   - avatar: /images/admin/avatar5.png
-    name: Lina
+    name: Dina
     message: >-
       Gosite.or.id memberikan strategi efektif untuk promosi online saya. Timnya
-      profesional dan hasilnya memuaskan.
+      berpengalaman dan hasilnya memuaskan.
     response: >-
       Terima kasih! Kami senang dapat membantu bisnis Anda berkembang dengan
       strategi digital terbaik.
     rating: 5
   - avatar: /images/admin/avatar6.png
-    name: Agus
+    name: Fadli
     message: >-
-      Gosite.or.id memberikan layanan terbaik dalam promosi bisnis saya. Trafik
-      website saya meningkat pesat.
+      Gosite.or.id berkualitas tinggi dalam promosi bisnis saya. Trafik website
+      saya meningkat pesat.
     response: >-
       Terima kasih atas ulasan positifnya. Kami akan terus memberikan layanan
       terbaik untuk bisnis Anda.
