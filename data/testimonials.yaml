@@ -1,34 +1,36 @@
 testimonials:
   - avatar: /images/admin/avatar1.png
-    name: Yusuf
+    name: Ilham
     message: >-
-      Saya menggunakan jasa pembuatan website di Gosite.or.id untuk bisnis jasa.
-      Prosesnya mudah dan hasilnya memuaskan.
+      Layanan optimasi website dari Gosite.or.id sangat efektif. Peringkat
+      website saya meningkat signifikan.
     response: >-
-      Kami sangat menghargai ulasan Anda. Terima kasih telah mempercayakan
-      kebutuhan digital marketing Anda kepada kami!
+      Terima kasih atas kepercayaan Anda! Kami senang bisa membantu bisnis Anda
+      berkembang.
     rating: 5
   - avatar: /images/admin/avatar2.png
-    name: Maya
-    message: Saya puas dengan jasa iklan Google Ads dari Gosite.or.id yang terarah.
+    name: Sinta
+    message: >-
+      Gosite.or.id sangat membantu dalam pemasaran online bisnis saya. Layanan
+      mereka terpercaya, dan hasilnya sesuai dengan target.
     response: >-
-      Kami sangat menghargai ulasan Anda. Senang mendengar bahwa Anda puas
-      dengan layanan kami!
+      Terima kasih atas kepercayaannya. Kami akan terus memberikan pelayanan
+      terbaik!
     rating: 5
   - avatar: /images/admin/avatar3.png
-    name: Fadli
+    name: Reza
     message: >-
       Jasa pengelolaan artikel dari Gosite.or.id sangat profesional. Website
       saya kini lebih teroptimasi dan trafiknya meningkat.
     response: >-
-      Senang dapat membantu meningkatkan visibilitas website Anda. Terima kasih
-      atas kepercayaannya!
+      Terima kasih! Kami berkomitmen untuk memberikan layanan terbaik bagi
+      bisnis Anda.
     rating: 4
   - avatar: /images/admin/avatar4.png
-    name: Rian
+    name: Agus
     message: >-
       Saya sangat puas dengan jasa pembuatan website di Gosite.or.id. Prosesnya
-      mudah dan hasilnya mempercepat pertumbuhan bisnis saya.
+      efisien dan hasilnya sangat membantu pertumbuhan bisnis saya.
     response: >-
       Senang mendengar Anda puas dengan hasilnya. Terima kasih atas
       kepercayaannya dalam menggunakan layanan kami.
@@ -36,17 +38,17 @@ testimonials:
   - avatar: /images/admin/avatar5.png
     name: Maya
     message: >-
-      Gosite.or.id memberikan solusi tepat untuk promosi online saya. Timnya
-      profesional dan hasilnya memuaskan.
+      Gosite.or.id memberikan strategi efektif untuk promosi online saya. Timnya
+      berpengalaman dan hasilnya memuaskan.
     response: >-
       Terima kasih! Kami senang dapat membantu bisnis Anda berkembang dengan
       strategi digital terbaik.
     rating: 5
   - avatar: /images/admin/avatar6.png
-    name: Reza
+    name: Fadli
     message: >-
-      Gosite.or.id memberikan layanan terbaik dalam promosi bisnis saya. Trafik
-      website saya meningkat pesat.
+      Saya menggunakan jasa Gosite.or.id untuk SEO, dan hasilnya luar biasa.
+      Layanannya terpercaya.
     response: >-
       Kami senang mendengar bahwa Anda puas dengan layanan kami. Terima kasih
       atas ulasannya!
