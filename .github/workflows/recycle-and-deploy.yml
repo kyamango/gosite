@@ -68,7 +68,7 @@ jobs:
     - name: Prepare GitHub Pages
       run: |
         mkdir -p public
-        echo "creativedesigninterior.com" > public/CNAME
+        echo "gosite.or.id" > public/CNAME
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4  # Update ke versi terbaru
