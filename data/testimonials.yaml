@@ -1,25 +1,27 @@
 testimonials:
   - avatar: /images/admin/avatar1.png
-    name: Farhan
+    name: Rahmat
     message: >-
-      Layanan optimasi website dari Gosite.or.id sangat membantu. Traffic
-      website saya meningkat signifikan.
+      Saya menggunakan jasa pembuatan website di Gosite.or.id untuk toko online.
+      Prosesnya cepat dan hasilnya terbaik.
     response: >-
       Kami sangat menghargai ulasan Anda. Terima kasih telah mempercayakan
       kebutuhan digital marketing Anda kepada kami!
     rating: 5
   - avatar: /images/admin/avatar2.png
-    name: Reni
-    message: Saya puas dengan jasa iklan Google Ads dari Gosite.or.id yang efektif.
+    name: Maya
+    message: >-
+      Gosite.or.id sangat efektif dalam pemasaran online bisnis saya. Layanan
+      mereka profesional, dan hasilnya sesuai dengan target.
     response: >-
-      Kami sangat menghargai ulasan Anda. Senang mendengar bahwa Anda puas
-      dengan layanan kami!
+      Terima kasih atas kepercayaannya. Kami akan terus memberikan pelayanan
+      terbaik!
     rating: 5
   - avatar: /images/admin/avatar3.png
     name: Reza
     message: >-
       Jasa pengelolaan artikel dari Gosite.or.id sangat bermanfaat. Website saya
-      kini lebih SEO-friendly dan trafiknya meningkat.
+      kini lebih teroptimasi dan trafiknya meningkat.
     response: >-
       Terima kasih! Kami berkomitmen untuk memberikan layanan terbaik bagi
       bisnis Anda.
@@ -27,20 +29,20 @@ testimonials:
   - avatar: /images/admin/avatar4.png
     name: Ilham
     message: >-
-      Iklan Facebook Ads dari Gosite.or.id terbaik, dan layanannya ramah. Sangat
-      direkomendasikan!
+      Iklan Facebook Ads dari Gosite.or.id luar biasa, dan layanannya cepat.
+      Sangat direkomendasikan!
     response: >-
       Terima kasih atas ulasannya. Kami sangat menghargai kepercayaan Anda pada
       layanan kami.
     rating: 5
   - avatar: /images/admin/avatar5.png
-    name: Rara
+    name: Reni
     message: >-
       Gosite.or.id memberikan strategi efektif untuk promosi online saya. Timnya
-      ramah dan hasilnya memuaskan.
+      profesional dan hasilnya memuaskan.
     response: >-
-      Kami menghargai ulasan Anda. Terima kasih telah memilih Gosite.or.id untuk
-      kebutuhan pemasaran digital Anda!
+      Terima kasih! Kami senang dapat membantu bisnis Anda berkembang dengan
+      strategi digital terbaik.
     rating: 5
   - avatar: /images/admin/avatar6.png
     name: Farhan
@@ -48,6 +50,6 @@ testimonials:
       Gosite.or.id memberikan layanan terbaik dalam promosi bisnis saya. Trafik
       website saya meningkat pesat.
     response: >-
-      Kami senang mendengar bahwa Anda puas dengan layanan kami. Terima kasih
-      atas ulasannya!
+      Terima kasih atas ulasan positifnya. Kami akan terus memberikan layanan
+      terbaik untuk bisnis Anda.
     rating: 5
